@@ -29,5 +29,5 @@ class Array
     end
 end
 
-p [-1, 0, 2, -2, 1].two_sum
-p [-1, 1, -2, 2, -2, 2, 2, -2].two_sum
+# p [-1, 0, 2, -2, 1].two_sum
+# p [-1, 1, -2, 2, -2, 2, 2, -2].two_sum
