@@ -14,5 +14,20 @@ describe Game do
             game.move(0, 2)
             expect(game.stacks).to eq([[3, 2], [], [1]])
         end
+        it "raise error if you try to move from empty stack" do
+            expect{game.move(1, 2)}.to raise_error(ArgumentError)
+        end
+
+        it "raise error if you try to move into smaller disks" do
+            stacks = ([[3, 2], [], [1]])
+            expect{game.move(0, 2)}.to raise_error(ArgumentError)
+        end
+    end
+
+    describe "#won" do
+        it "whenever the last subarray has all the disks in descending order" do
+            game.stacks[2] = [3, 2, 1]
+            expect(game.won?).to be(true)
+        end
     end
 end
